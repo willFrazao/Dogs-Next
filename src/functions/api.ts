@@ -31,16 +31,9 @@ export function USER_GET(token) {
   };
 }
 
-export function USER_POST(body) {
+export function USER_POST() {
   return {
     url: API_URL + '/api/user',
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    },
   };
 }
 
@@ -103,29 +96,15 @@ export function PHOTO_DELETE(id) {
   };
 }
 
-export function PASSWORD_LOST(body) {
+export function PASSWORD_LOST() {
   return {
     url: API_URL + '/api/password/lost',
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    },
   };
 }
 
-export function PASSWORD_RESET(body) {
+export function PASSWORD_RESET() {
   return {
     url: API_URL + '/api/password/reset',
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    },
   };
 }
 
