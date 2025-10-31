@@ -5,7 +5,6 @@ import React from 'react';
 
 export default function ContaPage() {
   const { user } = useUser();
-  console.log(user);
   return (
     <main>
       <h1>Conta: {user?.nome}</h1>
