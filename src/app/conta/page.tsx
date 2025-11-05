@@ -13,9 +13,9 @@ export default async function ContaPage() {
   
   if (userError) {
     return (
-      <main>
+      <section>
         <p>{userError}</p>
-      </main>
+      </section>
     );
   }
 
@@ -26,7 +26,7 @@ export default async function ContaPage() {
       {photosError ? (
         <p>{photosError}</p>
       ) : data && data.length > 0 ? (
-        <Feed photos={data} />
+        <Feed photos={data} user={user?.username} />
       ) : (
         <div>
             <p style={{ color: '#444', fontSize: '1.25rem', marginBottom: '1rem' }}>Nenhuma foto encontrada.</p>

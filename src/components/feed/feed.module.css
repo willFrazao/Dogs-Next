@@ -58,3 +58,9 @@
 .photo:hover .visualizacao {
   display: flex;
 }
+
+.feedInfo {
+  text-align: center;
+  color: #888;
+  margin: 2rem auto;
+}
