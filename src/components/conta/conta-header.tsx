@@ -32,6 +32,12 @@ export default function ContaHeader() {
   const { setUser } = useUser();
   async function handleLogout() {
     await logout();
+    // Remover token do localStorage (alguns componentes usam localStorage)
+    try {
+      window.localStorage.removeItem('token');
+    } catch (e) {
+      // ignore
+    }
     setUser(null);
   }
 

@@ -23,7 +23,9 @@ export default async function login(state: {}, formData: FormData) {
       sameSite: 'lax',
       maxAge: 60 * 60 * 24,
     });
-    return { data: null, ok: true, error: '' };
+    // Retornamos o token também no payload para que o cliente possa
+    // gravar no localStorage (alguns componentes do cliente leem o token de lá)
+    return { data: data.token, ok: true, error: '' };
   } catch (error: unknown) {
     return apiError(error);
   }

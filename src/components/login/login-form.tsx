@@ -31,8 +31,19 @@ export default function LoginForm() {
   });
 
   React.useEffect(() => {
-    if (state.ok) window.location.href = '/conta';
-  }, [state.ok]);
+    if (state.ok) {
+      // Quando o server action retornar o token (data), gravamos no localStorage
+      // para que componentes client-side que dependem dele funcionem.
+      if (state.data) {
+        try {
+          window.localStorage.setItem('token', state.data as string);
+        } catch (e) {
+          // ignore localStorage errors
+        }
+      }
+      window.location.href = '/conta';
+    }
+  }, [state.ok, state.data]);
 
   return (
     <>
